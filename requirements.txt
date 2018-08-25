@@ -1,9 +1,9 @@
 keras==2.1.2
-numpy==1.13.3
+numpy
 h5py==2.7.1
 pillow
 patool
 opencv-python
 scikit-learn
-tensorflow==1.4.0
+tensorflow
 matplotlib

@@ -31,7 +31,7 @@ def download_ucf(data_dir_path):
                                    reporthook=reporthook)
 
     print('unzipping ucf file')
-    patoolib.extract_archive(ucf_rar, outdir=data_dir_path)
+    patoolib.extract_archive(ucf_rar, outdir=data_dir_path, verbosity=-1)
 
 
 def scan_ucf(data_dir_path, limit):
