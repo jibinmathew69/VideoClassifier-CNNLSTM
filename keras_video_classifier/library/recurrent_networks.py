@@ -205,6 +205,13 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
         train_num_batches = len(Xtrain) // BATCH_SIZE
         test_num_batches = len(Xtest) // BATCH_SIZE
 
+        print("Debug1")
+        print(len(Xtrain))
+        print(len(Xtest))
+        print(train_num_batches)
+        print(test_num_batches)
+        print("Debug1 finish")
+
         checkpoint = ModelCheckpoint(filepath=weight_file_path, save_best_only=True)
         history = model.fit_generator(generator=train_gen, steps_per_epoch=train_num_batches,
                                       epochs=NUM_EPOCHS,
