@@ -60,7 +60,7 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
 
         model.add(Activation('softmax'))
 
-        model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+        model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
         return model
 
