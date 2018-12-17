@@ -3,6 +3,7 @@ from keras.layers.recurrent import LSTM
 from keras.models import Sequential
 from keras.applications.vgg16 import VGG16
 from keras.optimizers import SGD
+from keras.optimizers import Adam
 from keras import backend as K
 from keras.utils import np_utils
 from sklearn.model_selection import train_test_split
@@ -289,7 +290,7 @@ class VGG16LSTMVideoClassifier(object):
         self.model.load_weights(weight_file_path)
 
         vgg16_model = VGG16(include_top=self.vgg16_include_top, weights='imagenet')
-        vgg16_model.compile(optimizer=SGD(), loss='categorical_crossentropy', metrics=['accuracy'])
+        vgg16_model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy'])
         self.vgg16_model = vgg16_model
 
     def predict(self, video_file_path):
