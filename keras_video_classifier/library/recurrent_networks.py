@@ -142,7 +142,7 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
         architecture_file_path = self.get_architecture_file_path(model_dir_path, vgg16_include_top)
 
         self.vgg16_model = VGG16(include_top=self.vgg16_include_top, weights='imagenet')
-        self.vgg16_model.compile(optimizer=Adam(), loss='binary_crossentropy', metrics=['accuracy'])
+        self.vgg16_model.compile(optimizer=Adam(lr=0.0001), loss='binary_crossentropy', metrics=['accuracy'])
 
         feature_dir_name = data_set_name + '-VGG16-Features'
         if not vgg16_include_top:
