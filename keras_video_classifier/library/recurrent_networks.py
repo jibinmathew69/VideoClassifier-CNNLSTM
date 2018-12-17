@@ -13,7 +13,7 @@ import numpy as np
 from ..library.utility.frame_extractors.vgg16_feature_extractor import extract_vgg16_features_live, \
     scan_and_extract_vgg16_features
 
-BATCH_SIZE = 16
+BATCH_SIZE = 4
 NUM_EPOCHS = 20
 VERBOSE = 1
 HIDDEN_UNITS = 512
@@ -205,12 +205,11 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
         train_num_batches = len(Xtrain) // BATCH_SIZE
         test_num_batches = len(Xtest) // BATCH_SIZE
 
-        print("Debug1")
-        print(len(Xtrain))
-        print(len(Xtest))
+        print("debug")
         print(train_num_batches)
         print(test_num_batches)
-        print("Debug1 finish")
+        print("debug end")
+
 
         checkpoint = ModelCheckpoint(filepath=weight_file_path, save_best_only=True)
         history = model.fit_generator(generator=train_gen, steps_per_epoch=train_num_batches,
@@ -379,12 +378,6 @@ class VGG16LSTMVideoClassifier(object):
         train_num_batches = len(Xtrain) // BATCH_SIZE
         test_num_batches = len(Xtest) // BATCH_SIZE
 
-        print("Debug")
-        print(len(Xtrain))
-        print(len(Xtest))
-        print(train_num_batches)
-        print(test_num_batches)
-        print("Debug finish")
 
 
         checkpoint = ModelCheckpoint(filepath=weight_file_path, save_best_only=True)
