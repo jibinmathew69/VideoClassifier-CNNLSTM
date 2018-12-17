@@ -41,7 +41,7 @@ def extract_vgg16_features(model, video_input_file_path, feature_output_file_pat
     features = []
     success = True
     while success:
-        vidcap.set(cv2.CAP_PROP_POS_MSEC, (count * 1000))  # added this line
+        vidcap.set(cv2.CAP_PROP_POS_MSEC, (count * 100))  # added this line
         success, image = vidcap.read()
         # print('Read a new frame: ', success)
         if success:
