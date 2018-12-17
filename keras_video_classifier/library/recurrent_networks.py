@@ -10,7 +10,7 @@ from keras.callbacks import ModelCheckpoint
 import os
 import numpy as np
 
-from keras_video_classifier.library.utility.frame_extractors.vgg16_feature_extractor import extract_vgg16_features_live, \
+from ..library.utility.frame_extractors.vgg16_feature_extractor import extract_vgg16_features_live, \
     scan_and_extract_vgg16_features
 
 BATCH_SIZE = 64
