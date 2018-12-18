@@ -200,6 +200,9 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
         Xtrain, Xtest, Ytrain, Ytest = train_test_split(x_samples, y_samples, test_size=test_size,
                                                         random_state=random_state,shuffle=True)
 
+        print(Ytest)
+
+
         train_gen = generate_batch(Xtrain, Ytrain)
         test_gen = generate_batch(Xtest, Ytest)
 
@@ -379,7 +382,6 @@ class VGG16LSTMVideoClassifier(object):
         train_num_batches = len(Xtrain) // BATCH_SIZE
         test_num_batches = len(Xtest) // BATCH_SIZE
 
-        print(Ytest)
 
         checkpoint = ModelCheckpoint(filepath=weight_file_path, save_best_only=True)
         history = model.fit_generator(generator=train_gen, steps_per_epoch=train_num_batches,
