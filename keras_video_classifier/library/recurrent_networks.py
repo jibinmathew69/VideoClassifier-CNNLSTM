@@ -17,7 +17,7 @@ from ..library.utility.frame_extractors.vgg16_feature_extractor import extract_v
 BATCH_SIZE = 4
 NUM_EPOCHS = 20
 VERBOSE = 1
-HIDDEN_UNITS = 512
+HIDDEN_UNITS = 128
 MAX_ALLOWED_FRAMES = 20
 EMBEDDING_SIZE = 100
 
