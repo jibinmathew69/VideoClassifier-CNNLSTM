@@ -198,7 +198,7 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
         open(architecture_file_path, 'w').write(model.to_json())
 
         Xtrain, Xtest, Ytrain, Ytest = train_test_split(x_samples, y_samples, test_size=test_size,
-                                                        random_state=random_state)
+                                                        random_state=random_state,shuffle=True)
 
         train_gen = generate_batch(Xtrain, Ytrain)
         test_gen = generate_batch(Xtest, Ytest)
