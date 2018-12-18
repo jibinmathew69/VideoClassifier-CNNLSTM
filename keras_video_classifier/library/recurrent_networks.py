@@ -53,7 +53,7 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
         model.add(Bidirectional(LSTM(units=HIDDEN_UNITS, return_sequences=True),
                                 input_shape=(self.expected_frames, self.num_input_tokens)))
         model.add(Bidirectional(LSTM(10)))
-        model.add(Dense(512, activation='relu'))
+        model.add(Dense(64, activation='relu'))
         model.add(Dropout(0.5))
 
         model.add(Dense(self.nb_classes))
