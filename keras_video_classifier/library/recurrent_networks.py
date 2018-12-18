@@ -14,7 +14,7 @@ import numpy as np
 from ..library.utility.frame_extractors.vgg16_feature_extractor import extract_vgg16_features_live, \
     scan_and_extract_vgg16_features
 
-BATCH_SIZE = 2
+BATCH_SIZE = 4
 NUM_EPOCHS = 20
 VERBOSE = 1
 HIDDEN_UNITS = 32
@@ -142,7 +142,7 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
         architecture_file_path = self.get_architecture_file_path(model_dir_path, vgg16_include_top)
 
         self.vgg16_model = VGG16(include_top=self.vgg16_include_top, weights='imagenet')
-        self.vgg16_model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy'])
+        self.vgg16_model.compile(optimizer=Adam(lr=0.0001), loss='categorical_crossentropy', metrics=['accuracy'])
 
         feature_dir_name = data_set_name + '-VGG16-Features'
         if not vgg16_include_top:
