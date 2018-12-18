@@ -15,7 +15,7 @@ from ..library.utility.frame_extractors.vgg16_feature_extractor import extract_v
     scan_and_extract_vgg16_features
 
 BATCH_SIZE = 4
-NUM_EPOCHS = 20
+NUM_EPOCHS = 50
 VERBOSE = 1
 HIDDEN_UNITS = 32
 MAX_ALLOWED_FRAMES = 20
@@ -52,8 +52,8 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
         model = Sequential()
         model.add(Bidirectional(LSTM(units=HIDDEN_UNITS, return_sequences=True),
                                 input_shape=(self.expected_frames, self.num_input_tokens)))
-        model.add(Bidirectional(LSTM(10)))
-        model.add(Dense(64, activation='relu'))
+        model.add(Bidirectional(LSTM(2)))
+        model.add(Dense(32, activation='relu'))
         model.add(Dropout(0.7))
 
         model.add(Dense(self.nb_classes))
