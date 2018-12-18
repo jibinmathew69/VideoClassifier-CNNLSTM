@@ -14,7 +14,7 @@ import numpy as np
 from ..library.utility.frame_extractors.vgg16_feature_extractor import extract_vgg16_features_live, \
     scan_and_extract_vgg16_features
 
-BATCH_SIZE = 8
+BATCH_SIZE = 6
 NUM_EPOCHS = 20
 VERBOSE = 1
 HIDDEN_UNITS = 32
