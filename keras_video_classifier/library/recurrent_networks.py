@@ -17,7 +17,7 @@ from ..library.utility.frame_extractors.vgg16_feature_extractor import extract_v
 BATCH_SIZE = 8
 NUM_EPOCHS = 20
 VERBOSE = 1
-HIDDEN_UNITS = 128
+HIDDEN_UNITS = 32
 MAX_ALLOWED_FRAMES = 20
 EMBEDDING_SIZE = 100
 
@@ -200,7 +200,7 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
         Xtrain, Xtest, Ytrain, Ytest = train_test_split(x_samples, y_samples, test_size=test_size,
                                                         random_state=random_state,shuffle=True)
 
-        print(Ytest)
+
 
 
         train_gen = generate_batch(Xtrain, Ytrain)
