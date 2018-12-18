@@ -14,7 +14,7 @@ import numpy as np
 from ..library.utility.frame_extractors.vgg16_feature_extractor import extract_vgg16_features_live, \
     scan_and_extract_vgg16_features
 
-BATCH_SIZE = 4
+BATCH_SIZE = 8
 NUM_EPOCHS = 20
 VERBOSE = 1
 HIDDEN_UNITS = 128
@@ -60,7 +60,7 @@ class VGG16BidirectionalLSTMVideoClassifier(object):
 
         model.add(Activation('softmax'))
 
-        model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+        model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
         return model
 
